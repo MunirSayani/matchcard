@@ -14,9 +14,9 @@
   </div>
 
   <div id="field">
-    <strong><%= link_to_add_association 'Add a Contender', f, :contenders %></strong>
-    <strong><%= link_to_add_association '<span>Add a Tag Team</span>'.html_safe,
+    <strong><%= link_to_add_association 'Add a Tag Team'.html_safe,
                 f, :contenders, partial: 'pay_per_views/tag_team_contender_fields' %></strong>
+    <strong><%= link_to_add_association 'Add a Contender', f, :contenders %></strong>
   </div>
 
 </div>

@@ -6,7 +6,8 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  template: template0
+  host: localhost
   database: MatchCard
   pool: 5
   username: postgres

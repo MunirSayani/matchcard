@@ -1,0 +1,2 @@
+class TagTeam < Contender
+end
