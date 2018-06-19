@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :name, "Contender Name" %>
+    <%= f.select :name, PayPerView.possible_contenders, include_blank: true %>
+
+
+    <%= link_to_remove_association "remove contender", f %>
+  </div>
+</div>

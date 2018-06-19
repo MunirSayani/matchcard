@@ -1,0 +1,22 @@
+<div class="nested-fields" style="border: solid; padding: 10px; margin: 30px">
+
+
+  <div class="field">
+    <%= f.label :name, "Match Name" %>
+    <%= f.text_field :name %>
+    <%= link_to_remove_association "remove match", f %>
+  </div>
+
+  <div class="field">
+  <%= f.simple_fields_for :contenders do |match| %>
+    <%= render 'contender_fields', f: match %>
+  <% end %>
+  </div>
+
+  <div id="field">
+    <strong><%= link_to_add_association 'Add a Contender', f, :contenders %></strong>
+    <strong><%= link_to_add_association '<span>Add a Tag Team</span>'.html_safe,
+                f, :contenders, partial: 'pay_per_views/tag_team_contender_fields' %></strong>
+  </div>
+
+</div>

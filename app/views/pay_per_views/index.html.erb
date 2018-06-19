@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pay Per Views</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pay_per_views.each do |pay_per_view| %>
+      <tr>
+        <td><%= pay_per_view.name %></td>
+        <td><%= link_to 'Show', pay_per_view %></td>
+        <td><%= link_to 'Edit', edit_pay_per_view_path(pay_per_view) %></td>
+        <td><%= link_to 'Destroy', pay_per_view, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pay Per View', new_pay_per_view_path %>
