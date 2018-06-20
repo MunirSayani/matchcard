@@ -1,11 +1,10 @@
 <div class="nested-fields">
   <div class="field">
-    <%= f.label :name, "Contender Name" %>
-    <% if f.object.type == "TagTeam" %>
-      <%= f.select :name, PayPerView.possible_tag_contenders, include_blank: true %>
-    <% else %>
-      <%= f.select :name, PayPerView.possible_contenders, include_blank: true %>
-    <% end %>
+    
+    <%= f.hidden_field :type, value: f.object.class.name %>
+
+    <%= f.label :name, "#{f.object.class.name.humanize} has Name" %>
+    <%= f.select :name, f.object.possible_contenders, include_blank: true %>
 
 
     <%= link_to_remove_association "remove contender", f %>

@@ -1,2 +1,0 @@
-class TagTeam < Contender
-end

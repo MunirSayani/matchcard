@@ -74,7 +74,7 @@ class PayPerViewsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pay_per_view_params
       # params.fetch(:pay_per_view, {})
-      params.require(:pay_per_view).permit(:name)
+      params.require(:pay_per_view).permit(:name, :type)
     end
 
     def pay_per_view_matches_params

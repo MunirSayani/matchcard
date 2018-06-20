@@ -8,15 +8,19 @@
   </div>
 
   <div class="field">
-  <%= f.simple_fields_for :contenders do |match| %>
-    <%= render 'contender_fields', f: match %>
-  <% end %>
+    <%= f.simple_fields_for :contenders do |match| %>
+      <%= render 'contender_fields', f: match %>
+    <% end %>
   </div>
 
   <div id="field">
-    <strong><%= link_to_add_association 'Add a Tag Team'.html_safe,
-                f, :contenders, partial: 'pay_per_views/tag_team_contender_fields' %></strong>
-    <strong><%= link_to_add_association 'Add a Contender', f, :contenders %></strong>
+    
+     <% Contender.descendant_types.each do |child| %>
+      <strong><%= link_to_add_association "Add a #{child.to_s}", f, :contenders,
+       :wrap_object => Proc.new { |contender| contender = contender.becomes!(child.constantize); contender } %>
+       </strong>
+    
+   <% end %>
   </div>
 
 </div>
